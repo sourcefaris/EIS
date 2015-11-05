@@ -1,0 +1,113 @@
+.main {
+    width: 90%;
+    height: 90%;
+    position: auto;
+    background-image: url("../images/bg_img.png");
+    background-repeat: repeat;
+}
+
+.wrapper_login{
+    width: 100%;
+    height: 500px;
+    margin-left: 150px;
+    margin-top: 100px;
+
+}
+.login_container_1 {
+    display: inline;
+    position: fixed;
+    height: 500px;
+    width: 300px;
+    background-image: url("../images/phone_tablet_new2.png");
+    background-size: 300px 500px;
+    background-repeat: no-repeat;
+    /*filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(*/
+            /*src='../images/phone_tablet.png',*/
+            /*sizingMethod='scale');*/
+}
+
+.login_container_2 {
+
+    position: absolute;
+    color: white;
+    margin-left: 250px;
+    margin-top: 150px;
+    font-family: Calibri;
+    font-size: 40px;
+    line-height: 1.0;
+    text-align: center;
+}
+
+.login_container_3 {
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 50px;
+    height: 310px;
+    width: 480px;
+    left: 700px;
+    z-index: 2;
+    opacity: 1;
+    border-radius: 55px;
+    background-color: #FFF;
+    background-image: url("../images/icons/indosat.png");
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
+    background-position: 200px 20px;
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,.4);
+    opacity: 0.7;
+}
+
+.login_label {
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+    font-family: "Calibri";
+    font-size: 14px;
+    line-height: 1.0;
+    color: #2980b9;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.247059) 0px 7px 15px;
+}
+
+.signin {
+    position: auto;
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+    font-family: "Calibri";
+    font-weight: 200;
+    font-size: 37px;
+    line-height: 1.2;
+    color: rgb(91, 121, 131);
+    text-align: center;
+    width: 480px;
+    margin-top: 100px;
+}
+
+#label_small {
+    font-family: "lucida handwriting";
+    font-size: 15px;
+}
+
+.btn {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    border-radius: 28px;
+    font-family: Calibri;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+}

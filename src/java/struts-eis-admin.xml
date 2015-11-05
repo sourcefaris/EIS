@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 1. User -->
+	<package name="user" extends="default" namespace="/module/user">
+		<action name="form" class="com.cbi.eis.controller.user.UserForm">
+			<result name="success" type="velocity">
+				/eis/user/form.vm
+			</result>
+		</action>
+		<action name="save" class="com.cbi.eis.controller.user.SaveUser">
+			<result name="success" type="velocity">
+				/eis/user/form.vm
+			</result>
+			<result name="input" type="velocity">
+				/eis/user/form.vm
+			</result>
+		</action>
+		<action name="listUsernameTableau" class="com.cbi.eis.controller.user.UserForm">
+			<result name="success" type="velocity">
+				/eis/user/listUsernameTableau.vm
+			</result>
+		</action>	
+		<action name="listRoleTableau">
+			<result name="success" type="velocity">
+				/eis/user/listRoleUser.vm
+			</result>
+		</action>
+		<action name="search" class="com.cbi.eis.controller.user.SearchUser">
+			<result name="success" type="velocity">
+				/eis/user/result.vm
+			</result>
+		</action>	
+		<action name="delete" class="com.cbi.eis.controller.user.DeleteUser">
+			<result name="success" type="velocity">
+				/eis/user/form.vm
+			</result>
+		</action>	
+	</package>
+	
+	<!-- 2. Descriptor -->
+	<package name="descriptor" extends="default" namespace="/module/descriptor">
+		<action name="form" class="com.cbi.eis.controller.descriptor.DescriptorForm">
+			<result name="success" type="velocity">
+				/eis/descriptor/form.vm
+			</result>
+			<result name="workbook_detail" type="velocity">
+				/eis/descriptor/workbook_detail.vm
+			</result>
+		</action>
+		<action name="save" class="com.cbi.eis.controller.descriptor.SaveDescriptor">
+			<result name="success" type="velocity">
+				/eis/descriptor/workbook_detail.vm
+			</result>
+			<result name="input" type="velocity">
+				/eis/descriptor/workbook_detail.vm
+			</result>
+		</action>	
+		<action name="search" class="com.cbi.eis.controller.descriptor.SearchDescriptor">
+			<result name="success" type="velocity">
+				/eis/descriptor/result.vm
+			</result>
+		</action>	
+		<action name="delete" class="com.cbi.eis.controller.descriptor.DeleteDescriptor">
+			<result name="success" type="velocity">
+				/eis/descriptor/workbook_detail.vm
+			</result>
+			<result name="error" type="velocity">
+				/eis/descriptor/workbook_detail.vm
+			</result>
+		</action>
+		<action name="permissionList" class="com.cbi.eis.controller.user.SearchUser">
+			<result name="success" type="velocity">
+				/eis/descriptor/permissionList.vm
+			</result>
+		</action>
+		<action name="permissionDetail" class="com.cbi.eis.controller.permission.PermissionForm">
+			<result name="success" type="velocity">
+				/eis/descriptor/permissionDetail.vm
+			</result>
+		</action>
+		<action name="permissionSave" class="com.cbi.eis.controller.permission.SavePermission">
+			<result name="success" type="velocity">
+				/eis/descriptor/permissionDetail.vm
+			</result>
+		</action>
+		<action name="deletePermission" class="com.cbi.eis.controller.permission.DeletePermission">
+			<result name="success" type="velocity">
+				/eis/descriptor/permissionDetail.vm
+			</result>
+		</action>
+	</package>
+	
+	<!-- 3. Module -->
+	<package name="module" extends="default" namespace="/module/module">
+		<action name="form" class="com.cbi.eis.controller.module.ModuleForm">
+			<result name="success" type="velocity">
+				/eis/module/form.vm
+			</result>
+		</action>
+		<action name="save" class="com.cbi.eis.controller.module.SaveModule">
+			<result name="success" type="velocity">
+				/eis/module/form.vm
+			</result>
+			<result name="input" type="velocity">
+				/eis/module/form.vm
+			</result>
+		</action>
+		<action name="listModuleMaster" class="com.cbi.eis.controller.module.ModuleFunctionList">
+			<result name="success" type="velocity">
+				/eis/module/listModuleFunction.vm
+			</result>
+		</action>	
+		<action name="listDescriptor" class="com.cbi.eis.controller.descriptor.DescriptorList">
+			<result name="success" type="velocity">
+				/eis/module/listDescriptor.vm
+			</result>
+		</action>	
+		<action name="search" class="com.cbi.eis.controller.module.SearchModule">
+			<result name="success" type="velocity">
+				/eis/module/result.vm
+			</result>
+		</action>	
+		<action name="delete" class="com.cbi.eis.controller.module.DeleteModule">
+			<result name="success" type="velocity">
+				/eis/module/form.vm
+			</result>
+		</action>		
+	</package>
+	
+	<!-- 4. Role -->
+	<package name="role" extends="default" namespace="/module/role">
+		<action name="form" class="com.cbi.eis.controller.role.RoleList">
+			<result name="success" type="velocity">
+				/eis/role/form.vm
+			</result>
+		</action>
+		<action name="view_privilage" class="com.cbi.eis.controller.role.RoleForm">
+			<result name="success" type="velocity">
+				/eis/role/view_privilage.vm
+			</result>
+		</action>
+		<action name="listModulePrivilage" class="com.cbi.eis.controller.role.ModuleFunctionList">
+			<result name="success" type="velocity">
+				/eis/module/listModuleFunction.vm
+			</result>
+		</action>
+		<action name="remove_privilage" class="com.cbi.eis.controller.role.RemoveRolePrivilage">
+			<result name="success" type="velocity">
+				/eis/role/view_privilage.vm
+			</result>
+		</action>
+		<action name="add_privilage" class="com.cbi.eis.controller.role.AddPrivilage">
+			<result name="success" type="velocity">
+				/eis/role/view_privilage.vm
+			</result>
+		</action>
+	</package>
+</struts>

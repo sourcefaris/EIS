@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>List Username Tableau</title>
+<link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h3>Username List</h3>
+<p>#if ($!userTableaus.isEmpty())No User available yet
+#else Found <strong>$!userTableaus.size()</strong> #if ($!userTableaus.size()>1) Users #else User #end
+</p>
+
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+#foreach ($ut in $userTableaus)
+	#if($!ut.siteRole)
+	<tr valign="top">
+	<td><input type="button" onClick="javascript:window.opener.document.getElementById('userTableau').value='$!ut.id';window.opener.document.getElementById('user.username').value='$!ut.name';window.opener.document.getElementById('fullName').value='$!ut.fullName';window.opener.document.getElementById('userEmail').value='$!ut.email';window.opener.document.getElementById('userRoleTableauName').value='$!ut.siteRole';window.close();" value="Set">
+&nbsp;$!ut.name <br>
+	</tr>
+	#end
+#end
+</table>
+
+#end
+
+</body>
+</html>

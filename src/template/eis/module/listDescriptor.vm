@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>list - Dashboard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="../../style.css">
+
+</head>
+<body>
+<h3>Dashboard List</h3>
+<p>#if ($!descriptors.isEmpty())No dashboard available yet
+#else Found <strong>$!descriptors.size()</strong> #if ($!descriptors.size()>1) dashboards #else dashboard #end
+</p>
+
+<table width=100% border="0">
+#foreach ($descriptor in $descriptors)
+<tr>
+	<td><input type="button" onClick="javascript:window.opener.document.getElementById('descriptorId').value='$descriptor.id';window.opener.document.getElementById('descriptorUrl').value='#if($!descriptor.id!="")$!descriptor.name/$!descriptor.actionName #else
+None #end';window.close();" value="Set">&nbsp;#if($!descriptor.id!="")$!descriptor.name/$!descriptor.actionName #else None #end <br/></td>
+</tr>
+#end
+</table>
+#end
+</body>
+</html>

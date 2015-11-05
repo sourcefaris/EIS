@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 1. Superstore -->
+	<package name="Superstore" extends="default" namespace="/module/Superstore">
+		<action name="Product" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Overview" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Shipping" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Performance" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="SalesForecast" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="CommissionModel" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="OrderDetails" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+	</package>
+
+	<!-- 2. Regional -->
+	<package name="Regional" extends="default" namespace="/module/Regional">
+		<action name="Obesity" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="College" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Economy" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Stocks" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Storms" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Flights" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+	</package>
+
+	<!-- 3. WorldIndicators-En-US -->
+	<package name="WorldIndicators-En-US" extends="default" namespace="/module/WorldIndicators-En-US">
+		<action name="Population" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Health" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Economy" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Technology" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Tourism" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Business" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+		<action name="Story" class="com.cbi.eis.controller.TableauURLAction">
+			<result name="success" type="velocity">
+				/eis/view.vm
+			</result>
+		</action>
+	</package>
+
+</struts>

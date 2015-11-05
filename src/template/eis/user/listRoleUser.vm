@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>List Username Tableau</title>
+<link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h3>Role Site List</h3>
+
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+	<tr valign="top">
+	<td><input type="button" onClick="javascript:window.opener.document.getElementById('userRoleTableauName').value='GUEST';window.close();" value="Set">
+&nbsp;GUEST <br>
+	</tr>
+	<tr valign="top">
+	<td><input type="button" onClick="javascript:window.opener.document.getElementById('userRoleTableauName').value='SITE_ADMINISTRATOR';window.close();" value="Set">
+&nbsp;SITE_ADMINISTRATOR <br>
+	</tr>
+	<tr valign="top">
+	<td><input type="button" onClick="javascript:window.opener.document.getElementById('userRoleTableauName').value='INTERACTOR';window.close();" value="Set">
+&nbsp;INTERACTOR <br>
+	</tr>
+	<tr valign="top">
+	<td><input type="button" onClick="javascript:window.opener.document.getElementById('userRoleTableauName').value='PUBLISHER';window.close();" value="Set">
+&nbsp;PUBLISHER <br>
+	</tr>
+	<tr valign="top">
+	<td><input type="button" onClick="javascript:window.opener.document.getElementById('userRoleTableauName').value='UNLICENSED';window.close();" value="Set">
+&nbsp;UNLICENSED <br>
+	</tr>
+	<tr valign="top">
+	<td><input type="button" onClick="javascript:window.opener.document.getElementById('userRoleTableauName').value='VIEWER';window.close();" value="Set">
+&nbsp;VIEWER <br>
+	</tr>
+	<tr valign="top">
+	<td><input type="button" onClick="javascript:window.opener.document.getElementById('userRoleTableauName').value='VIEWER_WITH_PUBLISH';window.close();" value="Set">
+&nbsp;VIEWER_WITH_PUBLISH <br>
+	</tr>
+	<tr valign="top">
+	<td><input type="button" onClick="javascript:window.opener.document.getElementById('userRoleTableauName').value='UNLICENSED_WITH_PUBLISH';window.close();" value="Set">
+&nbsp;UNLICENSED_WITH_PUBLISH <br>
+	</tr>
+</table>
+
+</body>
+</html>

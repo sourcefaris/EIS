@@ -1,0 +1,47 @@
+.pkg h3 {
+	padding-left: 20px;
+	font: normal 11px verdana, helvetica, tahoma, sans-serif;
+	height: 22px;
+	cursor: pointer;
+	background: transparent no-repeat 0px 0px;
+	margin-left: 2px;
+	color: white;
+	font-weight: bold;
+}
+
+h3.collapser-expanded {
+	font-style: italic;
+	background-image: url(minus.gif);
+	background-position: right;
+}
+
+h3.collapser-collapsed {
+	font-weight: bold;
+	background-image: url(plus.gif);
+	background-position: right;
+}
+
+.pkg-body {
+	margin-left: 12px;
+	font: normal 11px verdana, helvetica, tahoma, sans-serif;
+}
+
+#classes a {
+	font: normal 11px verdana, helvetica, tahoma, sans-serif;
+	display: block;
+	font-weight: bold;
+	text-decoration: none;
+	height: 22px;
+	color: white;
+	background: transparent no-repeat 0px 0px;
+	padding-left: 9px;
+	margin-left: 2px;
+}
+
+#classes a:hover {
+	background: #3CB7CC no-repeat;
+}
+
+#classes a.ex {
+	background: #fff url(example.gif) no-repeat 16px -1px;
+}

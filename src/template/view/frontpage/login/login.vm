@@ -1,0 +1,93 @@
+<html>
+<head>
+
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Tableau Web Portal Landing Page">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BI Dashboard 2.0</title>
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <link rel="icon" sizes="192x192" href="../../images/touch/chrome-touch-icon-192x192.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="../../images/touch/ms-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#3372DF">
+
+        <link rel="stylesheet" href="../../css/login.css">
+        <script src="../../js/jquery-2.1.3.min.js"></script>
+        <script>
+
+            function msieversion() {
+
+                var ua = window.navigator.userAgent;
+                var msie = ua.indexOf("MSIE ");
+
+                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {     // If Internet Explorer, return version number
+                    alert('For more optimal experience in viewing this web page, please use another web browser :D \nthank you');
+                }
+                else{
+
+                }                 // If another browser, return 0
+
+
+                return false;
+            }
+
+            $("document").ready(function(){
+                // add jquery action here
+                msieversion();
+            });
+        </script>
+  
+    
+    
+
+</head>
+
+<body class="main">
+        <main class="wrapper_login">
+            <div class="login_container_1">
+            </div>
+            <div class="login_container_2">
+                <span>BI Dashboard 2.0</span><br>
+                <span id="label_small">Analytics for better future</span>
+            </div>
+            <div class="login_container_3">
+                <div class="signin">Sign in
+                    <form name="login_form" action="login.action" method="post">
+                        <div class="login_label">
+                            <table align="center">
+                                <tr>
+                                    <td>Username</td>
+                                    <td><input id="username" name="username" type="text"></td>
+                                </tr>
+                                <tr>
+                                    <td>Password</td>
+                                    <td><input id="password" name="password" type="password"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="" height="10px"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <input class="btn" id="submit" name="submit" type="submit" Value="Submit">
+                                    </td>
+                                </tr>
+                            </table>
+                            <table align="center">
+                            	<tr>
+									<td style="color: #ff0000; text-align: left;">$!fieldErrors.username &nbsp;</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+    
+    
+</html>

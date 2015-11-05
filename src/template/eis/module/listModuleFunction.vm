@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>List Menu</title>
+<link rel="stylesheet" type="text/css" href="../../style.css">
+</head>
+<body>
+<h3>Menu List</h3>
+<p>#if ($!modules.isEmpty())No menu available yet
+#else Found <strong>$!modules.size()</strong> #if ($!modules.size()>1) menus #else menu #end
+</p>
+
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+#foreach ($module in $modules)
+	<tr valign="top">
+	<td><input type="button" onClick="javascript:window.opener.document.getElementById('moduleFunctionId').value='$!module.id';window.opener.document.getElementById('moduleFunctionName').value='$!module.name';window.close();" value="Set">&nbsp; $!module.name<br>
+	</tr>
+#end
+</table>
+
+#end
+
+</body>
+</html>

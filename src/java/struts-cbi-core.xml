@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="tree" extends="default" namespace="/backend">
+		<action name="yuitree" class="com.cbi.eis.sitemanager.SiteTree">
+			<result name="success" type="velocity">
+				/view/backend/yuiexttree.vm
+			</result>
+			<result name="error" type="velocity">/errors/notfound.vm</result>
+		</action>
+		<action name="homepage" class="com.cbi.eis.controller.module.WheelMenuPosition">
+			<result name="success" type="velocity">
+				/eis/homepage.vm
+			</result>
+		</action>
+		<action name="notallowed">
+			<result name="success" type="velocity">
+				/errors/notallowed.vm
+			</result>
+		</action>
+	</package>
+	<!--Security - Login -->
+	<package name="security" extends="default" namespace="/backend/user">
+		<action name="index" class="com.cbi.eis.security.login.LoginForm">
+			<result name="login" type="velocity">
+				/view/frontpage/login/login.vm
+			</result>
+			<result name="continue" type="redirect">
+				../homepage.action
+			</result>
+			<result name="viewPage" type="redirect">
+				../yuitree.action
+			</result>
+			<result name="redirect" type="redirect">
+				../../${redirectUri}
+			</result>
+			<result name="error">/errors/notfound.vm</result>
+		</action>
+		<action name="login" class="com.cbi.eis.security.login.Login">
+			<result name="success" type="redirect">
+				index.action?redirectUri=${redirectUri}
+			</result>
+			<result name="input" type="velocity">
+				/view/frontpage/login/login.vm
+			</result>
+			<result name="error">/errors/notfound.vm</result>
+		</action>
+		<action name="logout" class="com.cbi.eis.security.login.Logout">
+			<result name="success" type="redirect">index.action</result>
+		</action>
+		<action name="signup" class="com.cbi.eis.security.login.Signup">
+			<result name="success" type="redirect">/</result>
+			<result name="input">signup.jsp</result>
+			<result name="error">/errors/notfound.vm</result>
+		</action>
+	</package>
+
+</struts>

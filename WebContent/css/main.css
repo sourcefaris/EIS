@@ -1,0 +1,224 @@
+body {
+    margin: 0px;
+    background-image: url("../images/bg_img.png");
+    background-repeat: repeat-y;
+}
+
+.index_login {
+    margin: 0px;
+    background-image: url("../images/bg_img.png");
+    background-size: 100% 768px;
+    background-repeat: repeat-y;
+}
+
+
+iframe {
+	
+	border: none;
+}
+
+
+#wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: 10%;
+    margin-right: auto;
+    margin-top: 40px;
+    /*background-color: #ccc;*/
+}
+.label {
+    position: absolute;
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+    font-family: "Calibri";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 121px;
+    height: 28px;
+    margin-top: 135px;
+    text-shadow: rgba(0, 0, 0, 0.247059) 0px 7px 15px;
+
+}
+
+.login_label {
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+    font-family: "Helvetica Neue",sans-serif;
+    font-size: 14px;
+    line-height: 1.0;
+    color: #2980b9;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.247059) 0px 7px 15px;
+}
+
+/*iCloud icons*/
+
+#snapshot, #summary, #reload, #revenue, #traffic, #subsreload, #subscription {
+    width: 121px;
+    height: 121px;
+    float: left;
+    background-repeat: no-repeat;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 80px;
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,.1);
+    border-radius: 35px;
+    background-size: 120px 120px;
+}
+
+#snapshot {
+    background-image: url("../images/icons/snapshot.png");
+}
+
+#summary{
+    background-image: url("../images/icons/summary.png");
+}
+
+#reload{
+    background-image: url("../images/icons/reload.png");
+}
+
+#revenue{
+    background-image: url("../images/icons/revenue.png");
+}
+
+#traffic{
+    background-image: url("../images/icons/traffic.png");
+}
+
+#subsreload{
+    background-image: url("../images/icons/subsreload.png");
+}
+
+#subscription{
+    background-image: url("../images/icons/subsreload.png");
+}
+
+/*additional*/
+#icloud {
+    content: "";
+    margin-left: 15px;
+    margin-top: 15px;
+    width:56px;
+    height: 16px;
+    background-image: url(https://www.icloud.com/system/cloudos/1T.111208/en-us/packed-1.png);
+    background-repeat: no-repeat;
+    background-position: 0px -249px;
+
+}
+#popup {
+    position: absolute;
+    height: 310px;
+    width: 480px;
+    margin-top: 170px;
+    margin-left: -240px;
+    left: 50%;
+    z-index: 2;
+    opacity: 1;
+    border-radius: 55px;
+    background-color: #FFF;
+    background-image: url("../images/icons/indosat.png");
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
+    background-position: 200px 20px;
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,.4);
+}
+.signin {
+    position: absolute;
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+    font-family: "Calibri";
+    font-weight: 200;
+    font-size: 37px;
+    line-height: 1.2;
+    color: rgb(91, 121, 131);
+    text-align: center;
+    width: 480px;
+    margin-top: 100px;
+}
+
+.btn {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    border-radius: 28px;
+    font-family: Calibri;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+}
+
+.ul_home {
+    display: ruby;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}
+
+#snapshot_jq, #summary_jq, #reload_jq, #revenue_jq, #traffic_jq, #subsreload_jq, #executive_jq {
+    width: 100px;
+    height: 100px;
+    float: left;
+    background-repeat: no-repeat;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 80px
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,.1);
+    border-radius: 35px;
+    background-size: 99px 99px;
+}
+
+#snapshot_jq {
+    background-image: url("../images/icons/snapshot.png");
+}
+
+#executive_jq{
+    background-image: url("../images/icons/summary.png");
+}
+
+#summary_jq{
+    background-image: url("../images/icons/summary.png");
+}
+
+#reload_jq{
+    background-image: url("../images/icons/reload.png");
+}
+
+#revenue_jq{
+    background-image: url("../images/icons/revenue.png");
+}
+
+#revenue_x{
+    z-index: 1;
+    background-image: url("../images/icons/revenue.png");
+}
+
+#traffic_jq{
+    background-image: url("../images/icons/traffic.png");
+}
+
+#subsreload_jq{
+    background-image: url("../images/icons/subsreload.png");
+}

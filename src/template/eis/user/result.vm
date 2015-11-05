@@ -1,0 +1,84 @@
+<html>
+<head>
+	<title>Search User </title>
+  	<link type="text/css" rel="stylesheet" href="../../style.css">
+  <link href="../../tabmenu/tabmenu.css" rel="stylesheet" type="text/css" />
+  <script src="../../tabmenu/tabmenu.js" type="text/javascript"></script>
+</head>
+<body>
+<ul id="tabmenu">
+    <li><a href="form.action">New</a></li>
+    <li><a href="#">Search</a></li>
+</ul>
+<form method="post" action="search.action">
+<table bgcolor="#98COF4" border="0" cellpadding="5" cellspacing="1" width="100%">
+      <tr bgcolor="#d0dcff">
+        <td colspan="5"><b>Search User</b></td>
+      </tr>
+	<tr bgcolor="#ffffff">
+		<td align="right" width="25%"><b>Username : </b></td>
+		<td colspan="4"><input name="username" value=""></td>
+	</tr>
+	<tr bgcolor="#ffffff">
+		<td align="right" width="25%"><b>Full Name : </b></td>
+		<td colspan="4"><input name="fullName" value=""></td>
+	</tr>
+	<tr bgcolor="#e4e4e4">
+		<td colspan="5"><input type="submit" value="Search"></td>
+	</tr>
+#if ($!users.isEmpty()) 
+	<tr bgcolor="#d0dcff">
+        	<td colspan="5" align="right">No such data found</td>
+      	</tr>
+#else 
+	<tr bgcolor="#d0dcff">
+        	<td colspan="5" align="right">
+        	Found ( <strong>$!resultRows</strong> ) #if ($resultRows > 1) users #else user 
+        	</td>
+      	</tr>
+#end
+</table>
+</form>
+<br>
+#if (!$actionMessages.isEmpty())
+<div class="valid_box"><ul>
+#foreach( $!m in $!actionMessages ) 
+<li>$!m</li>
+#end
+</ul>
+</div>
+#end
+<table bgcolor="#98COF4" border="0" cellpadding="5" cellspacing="1" width="100%">
+<tr align="center" bgcolor="#d0dcff">
+	<td colspan="2"><b>Username</b></td>
+	<td><b>Full Name</b></td>
+	<td><b>Email</b></td>
+	<td><b>Site Role</b></td>
+</tr>
+
+#foreach ($!u in $!users)
+	<tr valign="top" bgcolor="white">
+	<td>$!u.username</td>
+	<td align="center">
+		<a href="form.action?queryStatus=edit&user.id=$!u.id" title="edit"><img src="../../images/mini_icons/page_edit.png" border="0"></a>
+	</td>
+	<td>$!u.fullName</td>
+	<td>$!u.email</td>
+	<td>$!u.siteRoleTableau</td>
+	</tr>
+#end
+	<tr bgcolor="#e4e4e4">
+		<td align="right" colspan="5">
+			#if ($currPage > 0) <a href="search.action?username=$!username&fullName=$!fullName&currPage=0" title="currPage"><img src="../../images/mini_icons/resultset_first.png" border="0"></a>#end
+			#if ($currPage > 0) <a href="search.action?username=$!username&fullName=$!fullName&currPage=$prevPage" title="prevPage"><img src="../../images/mini_icons/resultset_previous.png" border="0"></a>#end
+			[page $page]
+			#if ($currPage < $maxPage) <a href="search.action?username=$!username&fullName=$!fullName&currPage=$nextPage" title="nextPage"><img src="../../images/mini_icons/resultset_next.png" border="0"></a>#end
+			#if ($currPage < $maxPage) <a href="search.action?username=$!username&fullName=$!fullName&currPage=$maxPage" title="maxPage"><img src="../../images/mini_icons/resultset_last.png" border="0"></a>#end
+		</td>
+     </tr>
+</table>
+
+#end
+
+</body>
+</html>

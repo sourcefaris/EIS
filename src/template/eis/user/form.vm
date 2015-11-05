@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>BI Dashboard 2.0 -
+Add a new User</title>
+  <link type="text/css" rel="stylesheet" href="../../style.css">
+  <link href="../../tabmenu/tabmenu.css" rel="stylesheet" type="text/css" />
+  <script src="../../tabmenu/tabmenu.js" type="text/javascript"></script>
+ 
+</head>
+<body onload="HTMLArea.replaceAll();">
+<ul id="tabmenu">
+    <li><a #if($!queryStatus=="edit")href="form.action" #else href="#" #end>New</a></li>
+    <li><a href="search.action">Search</a></li>
+    #if($!queryStatus=="edit")<li><a href="#">Update</a></li>#end
+</ul>
+#if (!$actionErrors.isEmpty())
+<div class="error_box"><ul class="errorMessage">
+#foreach( $!error in $!actionErrors ) 
+<li>$!error</li>
+#end
+</ul>
+</div>
+#end
+#if($!error==true)<div class="warning_box">#sfielderror()</div>#end
+#if (!$actionMessages.isEmpty())
+<div class="valid_box"><ul>
+#foreach( $!m in $!actionMessages ) 
+<li>$!m</li>
+#end
+</ul>
+</div>
+#end
+<form method="post" action="save.action">
+  <table bgcolor="#98COF4" border="0" cellpadding="5" cellspacing="1" width="100%">
+    <tbody>
+      <tr bgcolor="#d0dcff">
+        <td colspan="3"><b>#if($!queryStatus=="edit")Update#else Create#end User</b></td>
+      </tr>
+  
+   <tr bgcolor="#ffffff">
+     <td style="font-weight: bold;" align="right" valign="top">Username:</td>
+    <td>
+    <input type="textfield" id="user.username" name="user.username" value="$!user.username" size="15" onfocus="this.blur()"/>
+    &nbsp;&nbsp;#if(!$!user.id)<input type="button" value="Change" onclick="javascript:window.open('../user/listUsernameTableau.action','cats','scrollbars=yes,status=no,width=300,height=300')"/>#end
+    </td>
+  </tr>
+  <tr bgcolor="#ffffff">
+     <td style="font-weight: bold;" align="right" valign="top">Password:</td><td>
+	<input type="password" name="user.password" value=""/>  	</td>
+  </tr>
+  
+ 
+  <tr bgcolor="#ffffff">
+     <td style="font-weight: bold;" align="right" valign="top">Full Name:</td><td>
+	<input type="textfield" id="fullName" name="user.fullName" size="35" value="$!user.fullName"/></td>
+  </tr>
+  <tr bgcolor="#ffffff">
+        <td style="font-weight: bold;" align="right" width="25%">
+        	Email :
+        	</td>
+        <td width="75%"><input type="email" id="userEmail" name="user.email" value="$!user.email"/>
+    <input type="hidden" name="user.id" value="$!user.id"/>
+    <input type="hidden" id="userTableau" name="user.userTableauId" value="$!user.userTableauId"/></td>
+      </tr>
+
+		<tr  bgcolor="#ffffff">
+			<td style="font-weight: bold;" align="right" width="25%">Site Role</td>
+			<td><input type="textfield" id="userRoleTableauName" name="user.siteRoleTableau" value="$!user.siteRoleTableau" size="15" onfocus="this.blur()"/>
+			&nbsp;&nbsp;
+			#if($!user.siteRoleTableau!="")
+			<input type="button" value="Change" onclick="javascript:window.open('../user/listRoleTableau.action','cats','scrollbars=yes,status=no,width=300,height=300')"/>
+			#end
+			</td>
+		</tr><tr bgcolor="#e4e4e4">
+        <td colspan="3">
+        #if($!queryStatus=="edit")
+      	<input type="hidden" name="queryStatus" value="$!queryStatus"/>
+      	<input name="Submit" value="Update" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#if($!user.siteRoleTableau!='')<input onclick="location.href='delete.action?user.id=$!user.id'" type="button" style="background: red;color:white" value="Delete">#end
+      	#else<input name="Submit" value="Save" type="submit">&nbsp;&nbsp;
+        <input name="Clear" value="Reset" type="reset">#end </td>
+      </tr>
+   </tbody>
+</table>
+</form>
+</body>
+</html>

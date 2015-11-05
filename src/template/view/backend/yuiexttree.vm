@@ -1,0 +1,56 @@
+<html lang="en" target="_parent">
+<head>
+  <title>Business Intelligence Dashboard </title>
+    <link rel="stylesheet" type="text/css" href="#surl("value=/backend/resources/collapser.css")"></link>
+	<link rel="stylesheet" type="text/css" href="#surl("value=/backend/resources/docs.css")"></link>
+	<link rel="stylesheet" type="text/css" href="#surl("value=/style.css")"></link>
+</head>
+<body scroll="no" id="docs" background="#surl("value=/images/bg_img.png")">
+
+    <div id="loading-mask" style="width:100%;height:100%;background:purple;position:absolute;z-index:20000;left:0;top:0;">&#160;</div>
+  <div id="loading">
+    <div class="loading-indicator"><img src="#surl("value=/backend/resources/loading.gif")" style="width:16px;height:16px;" align="absmiddle">&#160;Loading...</div>
+  </div>
+  
+    <!-- include everything after the loading indicator -->
+    
+   <script type="text/javascript" src="#surl("value=/backend/ext/ext-base.js")"></script>
+    <script type="text/javascript" src="#surl("value=/backend/ext/ext-all.js")"></script>
+    <link rel="stylesheet" type="text/css" href="#surl("value=/backend/ext/ext-all.css")" />
+
+    <script type="text/javascript" src="#surl("value=/backend/resources/docs.js")"></script>
+	
+  <div id="header">
+	<div style="padding-top:0px;"><table width="100%"><tr>
+	<td>&nbsp;&nbsp;&nbsp;
+	<a href="#surl("value=/backend/user/index.action")" target="_parent" ><img src="#surl("value=/images/logo_bi.png")"></a>
+	<script>
+		$('marquee').marquee(optionalClass);
+		
+	</script>
+
+<marquee behavior="scroll" scrollamount="7" direction="left" width="75%" style='float: right; position: auto; top: 10px; font-style:italic;font-size:18px; 
+font-family:Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; color: #F0F0F0;'  onmouseover="stop()" onmouseout="start()">
+As Of 20 September &nbsp; &nbsp; &nbsp; Daily MTD Avg Revenue 60.98 Bn (5.24% vs LM, 7.40% vs Target) &nbsp; &nbsp; &nbsp; Daily MTD Avg Reload 54.08 Bn (1.96% vs LM, -13.19% vs Target) &nbsp; &nbsp; &nbsp; Subscriber 67.57 Mn (-0.10% vs LM, -1.90% vs Target)  &nbsp; &nbsp; &nbsp; SGE 29.11 Mn (-0.71% vs LM) &nbsp; &nbsp; 
+
+
+</marquee>
+		</td>
+		<td align="right" width="15%">&nbsp;&nbsp;&nbsp;<a id="sign-out" href="#surl("value=/backend/user/logout.action")" target="_parent" ><b>Sign Out</b></a>&nbsp;&nbsp;&nbsp;
+		</td>
+		</tr>
+	</div>
+  <div id="classes">
+	  <!-- BEGIN TREE -->
+      	<a href="#surl("value=/backend/homepage.action")" target="_parent">Home</a>
+		<!--start  -->
+		$!tree_script
+		<!--finish-->
+   	  <!-- END TREE -->
+  </div>
+  
+  <iframe id="frame" name="main" frameborder="no" src="$!urlAction"></iframe>
+  </body>
+</html>
+
+

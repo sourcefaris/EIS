@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>Upload Form</title>
+
+</head>
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+
+<form>
+	<table>
+		<tr>
+			<td align="right"><input type="file"/></td>
+			<td><input type="submit" value="Upload"/></td>
+		</tr>
+	</table>
+</form>

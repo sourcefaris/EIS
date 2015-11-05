@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Register Dashboard</title>
+ <link type="text/css" rel="stylesheet" href="../../style.css">
+  <link href="../../tabmenu/tabmenu.css" rel="stylesheet" type="text/css" />
+  <script src="../../tabmenu/tabmenu.js" type="text/javascript"></script>
+</head>
+<body onload="HTMLArea.replaceAll();">
+<ul id="tabmenu">
+    <li><a #if($!queryStatus=="edit")href="form.action" #else href="#" #end>New</a></li>
+    <li><a href="search.action">Search</a></li>
+    #if($!queryStatus=="edit")<li><a href="#">Update</a></li>#end
+</ul>
+<form method="post" action="save.action">
+<table bgcolor="#98COF4" border="0" cellpadding="5" cellspacing="1" width="100%">
+  <tbody>
+	<tr bgcolor="#d0dcff">
+    <td id="tableHeader1" colspan="2"><b>#if($!queryStatus=="edit")Change#else Register#end Dashboard</b></td>
+  	</tr>
+    <tr bgcolor="#ffffff">
+      <td style="font-weight: bold;" align="right" width="25%">Workbook Name : </td>
+      <td>$!workbookName  </td>
+    </tr bgcolor="#ffffff">
+    </tbody>
+     <tr bgcolor="#ffffff">
+    <td valign="top"  style="font-weight: bold;" align="right" width="25%">Select View : </td><td>
+	<select name="contentUrl">
+	#foreach ($view in $views)
+		<option value="$!view.contentUrl">$!view.contentUrl</option>
+	#end
+	</select>
+	<input type="hidden" name="workbookId" value="$!workbookId"/>
+	<input type="hidden" name="workbookName" value="$!workbookName"/>
+	<input type="hidden" name="queryStatus" value="$!queryStatus"/>
+	&nbsp;&nbsp;<input type="submit" name="Submit" value="Submit" onClick="doUpload()">
+	<br>
+	#foreach($!d in $!descriptors)
+		<br>&nbsp;<a href="delete.action?queryStatus=edit&descriptor.id=$!d.id&workbookId=$!workbookId&workbookName=$!workbookName" title="Delete"><img src="../../images/mini_icons/delete.png" border="0"></a>&nbsp;&nbsp;</strong>&nbsp;$!d.name/$!d.actionName
+	#end
+  	</td>
+  </tr>
+  
+  
+    <tr bgcolor="#e4e4e4">
+  <td id=tableHeader1 colspan="2"> <input type="hidden" name="id" value="$role.id">
+	&nbsp;&nbsp;#if($!queryStatus!="edit")<input onclick="location.href='form.action'" type="button" value="<< Back">#end
+  </td>
+  </tr>
+  </table>
+</form>
+
+
+
+
+
+</body>
+</html>
+    

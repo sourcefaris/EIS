@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Role - Role Detail</title>
+ <link type="text/css" rel="stylesheet" href="../../style.css">
+</head>
+<body onload="HTMLArea.replaceAll();">
+<form method="post" action="add_privilage.action">
+<table bgcolor="#98COF4" border="0" cellpadding="5" cellspacing="1" width="100%">
+  <tbody>
+	<tr bgcolor="#d0dcff">
+    <td id="tableHeader1" colspan="2"><b>Detail Role</b></td>
+  	</tr>
+    <tr bgcolor="#ffffff">
+      <td style="font-weight: bold;" align="right" width="25%">Name    :</td>
+      <td>$!role.Name  </td>
+    </tr bgcolor="#ffffff">
+    </tbody>
+     <tr bgcolor="#ffffff">
+    <td valign="top"  style="font-weight: bold;" align="right" width="25%">Module Function : </td><td>
+	<input type="textfield" id="moduleFunctionName" value="" size="15" disabled="true" onfocus="this.blur()"/>
+    <input type="hidden" id="moduleFunctionId" name="moduleFunctionId" value=""/>
+    &nbsp;&nbsp;<input type="button" value="Change" onclick="javascript:window.open('../role/listModulePrivilage.action','cats','scrollbars=yes,status=no,width=300,height=300')"/>
+	&nbsp;&nbsp;<input type="submit" name="Submit" value="Submit" onClick="doUpload()">
+		<br/>
+		#foreach ($rf in $role.rolePrivilage)
+    	<br>&nbsp;<a href="remove_privilage.action?rolePrivilageId=$!rf.id&id=$!role.id" title="Delete"><img src="../../images/mini_icons/delete.png" border="0"></a>&nbsp;&nbsp;</strong>&nbsp;$!rf.moduleFunction.name
+    	#end
+  	</td>
+  </tr>
+  
+  
+    <tr bgcolor="#e4e4e4">
+  <td id=tableHeader1 colspan="2"> <input type="hidden" name="id" value="$role.id">
+	&nbsp;&nbsp;
+  </td>
+  </tr>
+  </table>
+</form>
+
+
+
+
+
+</body>
+</html>
+    

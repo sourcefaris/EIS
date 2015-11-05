@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title>Workbook Permissions</title>
+  	<link type="text/css" rel="stylesheet" href="../../style.css">
+  <link href="../../tabmenu/tabmenu.css" rel="stylesheet" type="text/css" />
+  <script src="../../tabmenu/tabmenu.js" type="text/javascript"></script>
+</head>
+<body>
+<ul id="tabmenu">
+    <li><a href="form.action">Input Form</a></li>
+    <li><a href="search.action">Search</a>
+    <li><a href="permissionList.action?workbookId=$!workbookId&&workbookName=$!workbookName">Workbook Permission</a></li>
+    <li><a href="#">Permission Detail</a></li>
+    </li>
+</ul>
+#if (!$actionErrors.isEmpty())
+<div class="error_box"><ul class="errorMessage">
+#foreach( $!error in $!actionErrors ) 
+<li>$!error</li>
+#end
+</ul>
+</div>
+#end
+#if($!error==true)<div class="warning_box">#sfielderror()</div>#end
+#if (!$actionMessages.isEmpty())
+<div class="valid_box"><ul>
+#foreach( $!m in $!actionMessages ) 
+<li>$!m</li>
+#end
+</ul>
+</div>
+#end
+<form method="post" action="permissionSave.action">
+<table bgcolor="#98COF4" border="0" cellpadding="5" cellspacing="1" width="100%">
+      <tr bgcolor="#d0dcff">
+        <td colspan="5"><b>Workbook Permissions</b></td>
+      </tr>
+	<tr bgcolor="#ffffff">
+		<td align="right" width="25%"><b>Workbook Name : </b></td>
+		<td colspan="4">
+		<input type="hidden" name="workbookName" value="$!workbookName">
+		<input type="hidden" name="workbookId" value="$!workbookId">
+		$!workbookName
+		</td>
+	</tr>
+	<tr bgcolor="#ffffff">
+		<td align="right" width="25%"><b>Username : </b></td>
+		<td colspan="4"><input type="hidden" name="username" value="$!username">
+		<input type="hidden" name="userId" value="$!userId">
+		$!username
+		</td>
+	</tr>
+	<tr bgcolor="#ffffff">
+		<td align="right" width="25%" valign="top"><b>Permission : </b></td>
+		<td colspan="4">
+			<select name="capabilityName">
+				<option value="Read">Read</option>
+				<option value="ExportImage">Export Image</option>
+				<option value="ExportData">Export Data</option>
+				<option value="ViewComments">View Comments</option>
+				<option value="AddComment">Add Comment</option>
+				<option value="ViewUnderlyingData">View Underlying Data</option>
+				<option value="ShareView">Share View</option>
+				<option value="WebAuthoring">Web Authoring</option>
+				<option value="Write">Write</option>
+				<option value="ExportXml">Export Xml</option>
+				<option value="ChangeHierarchy">Change Hierarchy</option>
+				<option value="Delete">Delete</option>
+				<option value="ChangePermissions">Change Permissions</option>
+				<option value="ExportImage">Export Image</option>
+			</select>&nbsp;
+			<select name="capabilityMode">
+				<option value="Allow">ALLOW</option>
+				<option value="Deny">DENY</option>
+			</select>&nbsp;<input type="submit" value="Add">
+			<table border="0"><br/><br/>
+			#foreach($!c in $!capabilities)
+				<tr>
+					<td align="center"><a href="deletePermission.action?workbookId=$!workbookId&workbookName=$!workbookName&userId=$!userId&username=$!username&capabilityName=$!c.name&&capabilityMode=$!c.mode" title="delete permission"><img src="../../images/mini_icons/delete.png" border="0"></a></td>
+					<td>$!c.name</td>
+					<td><font #if($!c.mode=="Allow")color="green"#else color="red"#end>$!c.mode</font></td>
+				</tr>
+			#end
+			</table>
+	</tr>
+
+	<tr bgcolor="#d0dcff">
+		<td colspan="5">;&nbsp</td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>

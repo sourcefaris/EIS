@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>BI Dashboard 2.0 -
+Select Role</title>
+  <link type="text/css" rel="stylesheet" href="../../style.css">
+ 
+</head>
+<body onload="HTMLArea.replaceAll();">
+#if (!$actionErrors.isEmpty())
+<div class="error_box"><ul class="errorMessage">
+#foreach( $!error in $!actionErrors ) 
+<li>$!error</li>
+#end
+</ul>
+</div>
+#end
+#if($!error==true)<div class="warning_box">#sfielderror()</div>#end
+#if (!$actionMessages.isEmpty())
+<div class="valid_box"><ul>
+#foreach( $!m in $!actionMessages ) 
+<li>$!m</li>
+#end
+</ul>
+</div>
+#end
+<form method="post" action="view_privilage.action">
+  <table bgcolor="#98COF4" border="0" cellpadding="5" cellspacing="1" width="100%">
+    <tbody>
+      <tr bgcolor="#d0dcff">
+        <td colspan="3"><b>Role List</b></td>
+      </tr>
+      <tr bgcolor="#ffffff">
+        <td style="font-weight: bold;" align="right"  valign="top" width="25%">
+        	<font color="red">*</font>
+        	Select Role :
+        	</td>
+        <td width="75%">
+        #foreach($!role in $!roles)
+        	<input type="radio" name="role.id" value="$!role.id" checked>$!role.name<br>
+        #end
+        </td>
+      </tr>
+      <tr bgcolor="#e4e4e4">
+        <td colspan="3"><input name="Submit" value="Next >>" type="submit"></td>
+      </tr>
+   </tbody>
+</table>
+</form>
+</body>
+</html>
