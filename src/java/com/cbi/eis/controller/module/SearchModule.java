@@ -31,8 +31,11 @@ public class SearchModule extends ModuleForm implements HibernateSessionFactoryA
 			Criteria criteria = session.createCriteria(ModuleFunction.class);
 			if(!getName().equalsIgnoreCase(""))
 				criteria.add(Expression.like("name", "%" + getName() + "%"));
+			criteria.add(Expression.ne("id", "1"));
+			criteria.add(Expression.ne("id", "2"));
+			criteria.add(Expression.ne("id", "3"));
+			criteria.add(Expression.ne("id", "4"));
 			criteria.add(Expression.ne("id", "5"));
-			criteria.add(Restrictions.ne("moduleFunction.id", "5"));
 			resultRows = criteria.list().size();
 			maxPage = resultRows / maxRowPerPage;
 			if (resultRows % maxRowPerPage == 0) maxPage = maxPage - 1;

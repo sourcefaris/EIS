@@ -36,19 +36,6 @@ public class SiteTreeLeaf {
 		return this.moduleFunction;
 	}
 
-	/**
-	 * return int that contains count all downline
-	 */
-	public int getChildCount() throws ClassNotFoundException, SQLException, Exception {
-		/**
-		 * modified using hibernate
-		 */
-		mySQL = "FROM " + ModuleFunction.class.getName() + " mf WHERE mf.moduleFunction.id='" + this.sId + "'";
-		List temp = new ArrayList();
-		temp = pm.getList(mySQL);
-		return temp.size();
-	}
-
 	public String getMTMJavaScript(List<String> contentUrls) throws ClassNotFoundException, SQLException, Exception {
 		SiteTreeLeaf dbTreeWalkerChild;
 
@@ -59,25 +46,11 @@ public class SiteTreeLeaf {
 		List<ModuleFunction> modules = new ArrayList<ModuleFunction>();
 		modules = (List<ModuleFunction>) pm.getList(mySQL);
 		for (ModuleFunction mf : modules) {
-
 			sParentId = mf.getId();
-
-			// add to List
 			ModuleFunction mFunction = (ModuleFunction) pm.getById(ModuleFunction.class, sParentId);
-
-			int totalChild;
 			dbTreeWalkerChild = new SiteTreeLeaf(mFunction.getId(), variableNode + "_" + Node, i, pm);
-
-			totalChild = dbTreeWalkerChild.getChildCount();
-
-			// check the child after this object. if > 0 mean generate leaf
-			// descriptor
-			if (totalChild > 0) {
-				MTMJavaScript = MTMJavaScript + "<div class=\"pkg\"><h3>" + mf.getName()
-						+ "</h3><div class=\"pkg-body\">"; // dbTreeChild.getDescription();
-				MTMJavaScript = MTMJavaScript + dbTreeWalkerChild.getMTMJavaScript(contentUrls);
-				MTMJavaScript = MTMJavaScript + "</div></div>";
-			} else {
+			if (mf.getModuleDescriptor() != null
+					&& !mf.getModuleDescriptor().getId().trim().equalsIgnoreCase("")) {
 				String sUrlAction = "../module/" + mf.getModuleDescriptor().getName() + "/"
 						+ mf.getModuleDescriptor().getActionName();
 				if(mf.getModuleDescriptor().isTableau()==true){
@@ -93,6 +66,11 @@ public class SiteTreeLeaf {
 					MTMJavaScript = MTMJavaScript + "<a target=\"main\" href=\"" + sUrlAction + ".action\">" + mf.getName() + "</a>";
 					MTMJavaScript = MTMJavaScript + "</div>";
 				}
+			} else {
+				MTMJavaScript = MTMJavaScript + "<div class=\"pkg\"><h3>" + mf.getName()
+						+ "</h3><div class=\"pkg-body\">";
+				MTMJavaScript = MTMJavaScript + dbTreeWalkerChild.getMTMJavaScript(contentUrls);
+				MTMJavaScript = MTMJavaScript + "</div></div>";
 			}
 			i++;
 		}
