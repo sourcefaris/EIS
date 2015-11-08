@@ -15,8 +15,8 @@ var Docs = function(){
                 },
                 west: {
                     split:true,
-                    initialSize: 300,
-                    minSize: 175,
+                    initialSize: 350,
+                    minSize: 200,
                     maxSize: 400,
                     titlebar: false,
                     collapsible: false,
@@ -89,10 +89,6 @@ var Docs = function(){
 				}
 			});
         },
-        
-//        loadDoc : function(url){
-//            Ext.get('frame').dom.src = url;
-//        }
     };
 }();
 Ext.onReady(Docs.init, Docs, true);
@@ -111,8 +107,7 @@ var NavNode = function(clickEl, collapseEl){
     this.collapseEl = Ext.get(collapseEl);
     this.clickEl.addClass('collapser-collapsed');
     this.clickEl.mon('click', function(){
-        this.collapsed === true ? 
-            this.expand() : this.collapse();
+        this.collapsed === true ? this.expand() : this.collapse();
     }, this, false);
 };
 

@@ -9,6 +9,9 @@
 			<result name="success" type="velocity">
 				/view/backend/yuiexttree.vm
 			</result>
+			<result name="login" type="redirect">
+				../backend/user/login.action
+			</result>
 			<result name="error" type="velocity">/errors/notfound.vm</result>
 		</action>
 		<action name="homepage" class="com.cbi.eis.controller.module.WheelMenuPosition">

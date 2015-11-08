@@ -8,7 +8,6 @@ import com.cbi.eis.DefaultAction;
 import com.cbi.eis.entity.RolePrivilage;
 import com.cbi.eis.entity.User;
 import com.cbi.eis.security.LoginFilter;
-import com.cbi.eis.service.TableauService;
 import com.opensymphony.xwork2.ActionContext;
 
 import tableau.api.rest.bindings.WorkbookType;
@@ -29,9 +28,12 @@ public class SiteTree extends DefaultAction {
 		SiteTreeLeaf dbTree;
 
 		List<WorkbookType> works = (List<WorkbookType>) ActionContext.getContext().getSession().get(LoginFilter.TABLEAU_WORKBOOKS);
-		for(WorkbookType work:works){
-			contentUrls.add(work.getContentUrl());
-		}
+		if(works!=null){
+			for(WorkbookType work:works){
+				contentUrls.add(work.getContentUrl());
+			}
+		} else 
+			return "login";
 
 		try {
 			User us = getCurrentUser();
@@ -85,7 +87,7 @@ public class SiteTree extends DefaultAction {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return ERROR;
+		return "login";
 	}
 
 	public String getTree_script() {
