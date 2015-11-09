@@ -39,7 +39,8 @@ public class SaveModule extends ModuleForm {
 			}
 			persistence.save(module);
 			addActionMessage("Module saved");
-			setModuleFunction(null);
+			if(!"edit".equalsIgnoreCase(getQueryStatus()))
+				setModuleFunction(null);
 			return SUCCESS;
 		}
 	}

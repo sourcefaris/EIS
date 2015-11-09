@@ -57,17 +57,17 @@ public class SiteTreeLeaf {
 					for(String contentUrl: contentUrls){
 						if(contentUrl.trim().equalsIgnoreCase(mf.getModuleDescriptor().getName().trim())){
 							MTMJavaScript = MTMJavaScript + "<div class=\"pkg-body\">";
-							MTMJavaScript = MTMJavaScript + "<a target=\"main\" href=\"" + sUrlAction + ".action\">" + mf.getName() + "</a>";
+							MTMJavaScript = MTMJavaScript + "<a target=\"main\" href=\"" + sUrlAction + ".action\">" + mf.getName().replace("<br>", "") + "</a>";
 							MTMJavaScript = MTMJavaScript + "</div>";
 						}
 					}
 				} else {
 					MTMJavaScript = MTMJavaScript + "<div class=\"pkg-body\">";
-					MTMJavaScript = MTMJavaScript + "<a target=\"main\" href=\"" + sUrlAction + ".action\">" + mf.getName() + "</a>";
+					MTMJavaScript = MTMJavaScript + "<a target=\"main\" href=\"" + sUrlAction + ".action\">" + mf.getName().replace("<br>", "") + "</a>";
 					MTMJavaScript = MTMJavaScript + "</div>";
 				}
 			} else {
-				MTMJavaScript = MTMJavaScript + "<div class=\"pkg\"><h3>" + mf.getName()
+				MTMJavaScript = MTMJavaScript + "<div class=\"pkg\"><h3>" + mf.getName().replace("<br>", "")
 						+ "</h3><div class=\"pkg-body\">";
 				MTMJavaScript = MTMJavaScript + dbTreeWalkerChild.getMTMJavaScript(contentUrls);
 				MTMJavaScript = MTMJavaScript + "</div></div>";

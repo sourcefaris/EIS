@@ -58,7 +58,7 @@ $(document).ready(function(){
         	<font color="red">*</font>
         	Menu Name :
         	</td>
-        <td width="75%"><input maxlength="128" name="moduleFunction.name" size="25" value="$!moduleFunction.name"></td>
+        <td width="75%"><input maxlength="128" name="moduleFunction.name" size="35" value="$!moduleFunction.name">&nbsp;&nbsp;<i>use br tag to enter line breaks</i></td>
       </tr>
   
    <tr bgcolor="#ffffff">
@@ -104,7 +104,7 @@ $(document).ready(function(){
       <tr bgcolor="#e4e4e4">
         <td colspan="3">#if($!queryStatus=="edit")
       	<input type="hidden" name="queryStatus" value="$!queryStatus"/>
-      	<input name="Submit" value="Update" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#if(!$!moduleFunction.moduleFunction.id)<input onclick="location.href='delete.action?moduleFunction.id=$!moduleFunction.id'" type="button" style="background: red;color:white" value="Delete">#end
+      	<input name="Submit" value="Update" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input onclick="location.href='delete.action?moduleFunction.id=$!moduleFunction.id'" type="button" style="background: red;color:white" value="Delete">
       	#else<input name="Submit" value="Save" type="submit">&nbsp;&nbsp;
         <input name="Clear" value="Reset" type="reset">#end </td>
       </tr>

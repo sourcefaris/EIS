@@ -151,6 +151,9 @@ public class WheelMenuPosition extends ModuleForm{
 	
 	@Override
 	public String execute() throws Exception {
+		if(getCurrentUser()==null){
+			return "login";
+		}
 		A = persistence.getList("FROM "+ModuleFunction.class.getName()+" mf WHERE mf.sorting='88'").size()>0?(ModuleFunction) persistence.getList("FROM "+ModuleFunction.class.getName()+" mf WHERE mf.sorting='88'").get(0):null;
 		B = persistence.getList("FROM "+ModuleFunction.class.getName()+" mf WHERE mf.sorting='89'").size()>0?(ModuleFunction) persistence.getList("FROM "+ModuleFunction.class.getName()+" mf WHERE mf.sorting='89'").get(0):null;
 		C = persistence.getList("FROM "+ModuleFunction.class.getName()+" mf WHERE mf.sorting='90'").size()>0?(ModuleFunction) persistence.getList("FROM "+ModuleFunction.class.getName()+" mf WHERE mf.sorting='90'").get(0):null;

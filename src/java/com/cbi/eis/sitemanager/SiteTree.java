@@ -58,7 +58,7 @@ public class SiteTree extends DefaultAction {
 							if(contentUrl.trim().equalsIgnoreCase(tmp.getModuleFunction().getModuleDescriptor().getName().trim())){
 								MTMJavaScript = MTMJavaScript + "<div class=\"pkg-body\">";
 								MTMJavaScript = MTMJavaScript + "<a target=\"main\" href=\"" + sUrlAction + ".action\">"
-										+ tmp.getModuleFunction().getName() + "</a>";
+										+ tmp.getModuleFunction().getName().replace("<br>", "") + "</a>";
 								MTMJavaScript = MTMJavaScript + "</div>";
 								break;
 							} 
@@ -66,11 +66,11 @@ public class SiteTree extends DefaultAction {
 					} else {
 						MTMJavaScript = MTMJavaScript + "<div class=\"pkg-body\">";
 						MTMJavaScript = MTMJavaScript + "<a target=\"main\" href=\"" + sUrlAction + ".action\">"
-								+ tmp.getModuleFunction().getName() + "</a>";
+								+ tmp.getModuleFunction().getName().replace("<br>", "") + "</a>";
 						MTMJavaScript = MTMJavaScript + "</div>";
 					}
 				} else {
-					MTMJavaScript = MTMJavaScript + "<div class=\"pkg\"><h3>" + tmp.getModuleFunction().getName()
+					MTMJavaScript = MTMJavaScript + "<div class=\"pkg\"><h3>" + tmp.getModuleFunction().getName().replace("<br>", "")
 							+ "</h3><div class=\"pkg-body\">";
 					// check the child is > 0
 					MTMJavaScript = MTMJavaScript + dbTree.getMTMJavaScript(contentUrls);
