@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Business Intelligence 2.0</title>
+  <link rel="icon" href="#surl("value=/favicon.ico")"/>
   <link rel="stylesheet" href="#surl("value=/css/styles.css")"/>
   <link rel="stylesheet" href="#surl("value=/css/wsk%20styles/main.css")"/>
   <link rel="stylesheet" href="#surl("value=/css/home.css")"/>
@@ -29,8 +30,7 @@
 
 				<marquee behavior="scroll" scrollamount="7" direction="left" width="800px" style='float: left; position: relative; top: 10px; font-style:italic;font-size:18px; 
 				font-family:Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; color: #F0F0F0;'  onmouseover="stop()" onmouseout="start()">
-				As Of 19 June &nbsp; &nbsp; &nbsp; Daily MTD Avg Revenue 55.09 Bn (0.49% vs LM, 0.05% vs Target) &nbsp; &nbsp; &nbsp; Daily MTD Avg Reload 51.55 Bn (3.55% vs LM, -15.03% vs Target) 
- &nbsp; &nbsp; &nbsp; Subscriber 65.29 Mn (0.75% vs LM, -2.35% vs Target)  &nbsp; &nbsp; &nbsp; SGE 27.40 Mn (2.21% vs LM) &nbsp; &nbsp;
+				#include("RunningText.txt")
 				</marquee>
 				<img src='../images/logo/logo_bi.png'  style='float: left; position: relative'/>
 			</strong></h4>

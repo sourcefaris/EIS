@@ -58,7 +58,7 @@ $(document).ready(function(){
         	<font color="red">*</font>
         	Menu Name :
         	</td>
-        <td width="75%"><input maxlength="128" name="moduleFunction.name" size="35" value="$!moduleFunction.name">&nbsp;&nbsp;<i>use br tag to enter line breaks</i></td>
+        <td width="75%"><input maxlength="128" name="moduleFunction.name" size="35" value="$!moduleFunction.name">&nbsp;&nbsp;<i>use &#60;br&#62; tag to enter line breaks</i></td>
       </tr>
   
    <tr bgcolor="#ffffff">

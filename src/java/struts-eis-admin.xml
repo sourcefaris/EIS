@@ -64,6 +64,9 @@
 			<result name="success" type="velocity">
 				/eis/descriptor/result.vm
 			</result>
+			<result name="login" type="redirect">
+				../backend/user/login.action
+			</result>
 		</action>	
 		<action name="delete" class="com.cbi.eis.controller.descriptor.DeleteDescriptor">
 			<result name="success" type="velocity">

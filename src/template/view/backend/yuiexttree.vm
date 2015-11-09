@@ -1,6 +1,7 @@
 <html lang="en" target="_parent">
 <head>
   <title>Business Intelligence Dashboard </title>
+  <link rel="icon" href="#surl("value=/favicon.ico")"/>
     <link rel="stylesheet" type="text/css" href="#surl("value=/backend/resources/collapser.css")"></link>
 	<link rel="stylesheet" type="text/css" href="#surl("value=/backend/resources/docs.css")"></link>
 	<link rel="stylesheet" type="text/css" href="#surl("value=/style.css")"></link>
@@ -31,7 +32,7 @@
 
 <marquee behavior="scroll" scrollamount="7" direction="left" width="75%" style='float: right; position: auto; top: 10px; font-style:italic;font-size:18px; 
 font-family:Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; color: #F0F0F0;'  onmouseover="stop()" onmouseout="start()">
-As Of 20 September &nbsp; &nbsp; &nbsp; Daily MTD Avg Revenue 60.98 Bn (5.24% vs LM, 7.40% vs Target) &nbsp; &nbsp; &nbsp; Daily MTD Avg Reload 54.08 Bn (1.96% vs LM, -13.19% vs Target) &nbsp; &nbsp; &nbsp; Subscriber 67.57 Mn (-0.10% vs LM, -1.90% vs Target)  &nbsp; &nbsp; &nbsp; SGE 29.11 Mn (-0.71% vs LM) &nbsp; &nbsp; 
+#include("RunningText.txt") 
 
 
 </marquee>

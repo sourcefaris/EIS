@@ -12,20 +12,25 @@
     <td id="tableHeader1" colspan="2"><b>Detail Role</b></td>
   	</tr>
     <tr bgcolor="#ffffff">
-      <td style="font-weight: bold;" align="right" width="25%">Name    :</td>
+      <td style="font-weight: bold;" align="right" width="25%" valign="top">Name    :</td>
       <td>$!role.Name  </td>
     </tr bgcolor="#ffffff">
     </tbody>
      <tr bgcolor="#ffffff">
-    <td valign="top"  style="font-weight: bold;" align="right" width="25%">Module Function : </td><td>
+    <td valign="top"  style="font-weight: bold;" align="right" width="25%">Main Menu : </td><td>
 	<input type="textfield" id="moduleFunctionName" value="" size="15" disabled="true" onfocus="this.blur()"/>
     <input type="hidden" id="moduleFunctionId" name="moduleFunctionId" value=""/>
     &nbsp;&nbsp;<input type="button" value="Change" onclick="javascript:window.open('../role/listModulePrivilage.action','cats','scrollbars=yes,status=no,width=300,height=300')"/>
 	&nbsp;&nbsp;<input type="submit" name="Submit" value="Submit" onClick="doUpload()">
 		<br/>
+		<table border="0">
 		#foreach ($rf in $role.rolePrivilage)
-    	<br>&nbsp;<a href="remove_privilage.action?rolePrivilageId=$!rf.id&id=$!role.id" title="Delete"><img src="../../images/mini_icons/delete.png" border="0"></a>&nbsp;&nbsp;</strong>&nbsp;$!rf.moduleFunction.name
+    	<tr>
+    	<td width="5" valign="top"><a href="remove_privilage.action?rolePrivilageId=$!rf.id&id=$!role.id" title="Delete"><img src="../../images/mini_icons/delete.png" border="0"></a></td>
+    	<td>$!rf.moduleFunction.name</td>
+    	</tr>
     	#end
+    	</table>
   	</td>
   </tr>
   

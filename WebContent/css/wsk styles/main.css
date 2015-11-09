@@ -40,7 +40,7 @@ body.open {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #171b60;
+  background-color: #23437D;
   overflow: hidden;
   z-index: 1;
 }
@@ -52,7 +52,7 @@ body.open {
   width: 100%;
   height: 40px;
   position: relative;
-  background-color: #171b60;
+  background-color: #23437D;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
@@ -258,7 +258,7 @@ main {
     max-width: 90%;
     padding: 0 16px;
     box-sizing: border-box;
-    background-color: #171b60;
+    background-color: #23437D;
   }
 
   .app-bar .logo {
