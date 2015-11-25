@@ -37,7 +37,7 @@ font-family:Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; color: #F0F0
 
 </marquee>
 		</td>
-		<td align="right" width="15%">&nbsp;&nbsp;&nbsp;<a id="sign-out" href="#surl("value=/backend/user/logout.action")" target="_parent" ><b>Sign Out</b></a>&nbsp;&nbsp;&nbsp;
+		<td align="right" width="15%">&nbsp;&nbsp;&nbsp;<a id="sign-out" href="#surl("value=/backend/user/logout.action")" target="_parent" ><b>SIGN OUT</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		</td>
 		</tr>
 	</div>

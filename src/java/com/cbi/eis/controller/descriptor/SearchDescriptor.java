@@ -32,7 +32,7 @@ public class SearchDescriptor extends DescriptorForm implements HibernateSession
 
 	@Override
 	public String execute() throws Exception {
-		List<WorkbookType> works = (List<WorkbookType>) ServletActionContext.getRequest().getSession().getAttribute(LoginFilter.TABLEAU_WORKBOOKS);
+		List<WorkbookType> works = getWorkbooks();
 		for(WorkbookType work:works){
 			contentUrls.add(work.getContentUrl());
 		}

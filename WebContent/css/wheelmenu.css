@@ -22,3 +22,8 @@
 .wheel li a {
   display: block;
 }
+
+.sub_image_label {
+	display: none;
+	position: fixed;
+}

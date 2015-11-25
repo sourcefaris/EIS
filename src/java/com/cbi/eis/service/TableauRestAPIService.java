@@ -115,7 +115,7 @@ public class TableauRestAPIService extends DefaultAction {
         return response;
     }
 	
-	public void invokeSignOut(TableauCredentialsType credential) {
+	public static void invokeSignOut(TableauCredentialsType credential) {
         String url = Operation.SIGN_OUT.getUrl();
         Client client = Client.create();
         WebResource webResource = client.resource(url);

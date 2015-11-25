@@ -14,10 +14,10 @@ var Docs = function(){
                     titlebar: false
                 },
                 west: {
-                    split:true,
-                    initialSize: 350,
-                    minSize: 200,
-                    maxSize: 400,
+                    split:false,
+                    initialSize: 225,
+                    minSize: 225,
+                    maxSize: 225,
                     titlebar: false,
                     collapsible: false,
                     animate: false,

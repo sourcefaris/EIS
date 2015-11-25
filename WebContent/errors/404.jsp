@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Error 404</title>
 </head>
-<body>
+<body style="background-color: white">
 <h1>HTTP Status 404</h1>
 <p>The requested resource is not available.</p>
 </body>

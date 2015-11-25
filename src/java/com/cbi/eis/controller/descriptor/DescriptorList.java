@@ -3,7 +3,6 @@ package com.cbi.eis.controller.descriptor;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.struts2.ServletActionContext;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Expression;
 
@@ -11,8 +10,6 @@ import com.cbi.eis.DefaultAction;
 import com.cbi.eis.entity.Descriptor;
 import com.cbi.eis.persistence.hibernate.HibernateSessionFactory;
 import com.cbi.eis.persistence.hibernate.HibernateSessionFactoryAware;
-import com.cbi.eis.security.LoginFilter;
-import com.cbi.eis.service.TableauService;
 
 import tableau.api.rest.bindings.WorkbookType;
 
@@ -23,7 +20,7 @@ public class DescriptorList extends DefaultAction implements HibernateSessionFac
 	
 	@Override
 	public String execute() throws Exception {
-		List<WorkbookType> works = (List<WorkbookType>) ServletActionContext.getRequest().getSession().getAttribute(LoginFilter.TABLEAU_WORKBOOKS);
+		List<WorkbookType> works = getWorkbooks();
 		for(WorkbookType work:works){
 			contentUrls.add(work.getContentUrl());
 		}

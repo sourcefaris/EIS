@@ -11,9 +11,6 @@
 }
 
 #docs .x-layout-collapsed-west {
-	background-image: url(expand_r.png);
-	background-repeat: no-repeat;
-	background-position: center;
 	background-color: transparent;
 }
 
@@ -25,7 +22,7 @@
 }
 
 #header {
-	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-family: Calibri;
 	color: transparent;
 }
 
@@ -73,13 +70,13 @@ a#sign-out {
 }
 
 #classes {
-	overflow: auto;
+	overflow: hidden;
 	padding: 5px;
 	background: transparent;
 }
 
 #classes a span {
-	font: normal 11px verdana, helvetica, tahoma, sans-serif;
+	font: normal 11px Calibri;
 }
 
 #classes .cls a:hover span {

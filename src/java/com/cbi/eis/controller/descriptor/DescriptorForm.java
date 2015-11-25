@@ -3,20 +3,15 @@ package com.cbi.eis.controller.descriptor;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.struts2.ServletActionContext;
-
 import com.cbi.eis.DefaultAction;
 import com.cbi.eis.entity.Descriptor;
-import com.cbi.eis.security.LoginFilter;
 import com.cbi.eis.service.TableauService;
 
 import tableau.api.rest.bindings.ViewType;
-import tableau.api.rest.bindings.WorkbookType;
 
 public class DescriptorForm extends DefaultAction{
 	private Descriptor descriptor = new Descriptor();
 	private List<Descriptor> descriptors = new ArrayList<>();
-	private List<WorkbookType> workbooks;
 	private List<ViewType> views;
 	private String workbookId;
 	private String workbookName;
@@ -30,7 +25,6 @@ public class DescriptorForm extends DefaultAction{
 			setDescriptors(persistence.getList("FROM "+Descriptor.class.getName()+" dsc WHERE dsc.name='"+getWorkbookName()+"'"));
 			return "workbook_detail";
 		} else {
-			setWorkbooks((List<WorkbookType>) ServletActionContext.getRequest().getSession().getAttribute(LoginFilter.TABLEAU_WORKBOOKS));
 			return SUCCESS;
 		}
 	}
@@ -49,14 +43,6 @@ public class DescriptorForm extends DefaultAction{
 	
 	public void setDescriptors(List<Descriptor> descriptors) {
 		this.descriptors = descriptors;
-	}
-	
-	public List<WorkbookType> getWorkbooks() {
-		return workbooks;
-	}
-	
-	public void setWorkbooks(List<WorkbookType> workbooks) {
-		this.workbooks = workbooks;
 	}
 	
 	public List<ViewType> getViews() {

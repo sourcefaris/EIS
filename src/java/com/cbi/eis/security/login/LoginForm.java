@@ -28,7 +28,7 @@ public class LoginForm extends DefaultAction implements UserAccessorAware {
 			
 			getUser().setId(su.decodeBase64(ActionContext.getContext().getSession().get(LoginFilter.LOGIN_GA_USER).toString()));
 			setUser(ua.getById(getUser().getId()));
-			if(getUser().getRole().getId().equals("1"))
+			if(getUser().getRole().getId().equals("3"))
 				return "viewPage";
 			else
 				return "continue";

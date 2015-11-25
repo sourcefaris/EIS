@@ -22,10 +22,8 @@ import tableau.api.rest.bindings.PermissionsType;
 import tableau.api.rest.bindings.SiteRoleType;
 import tableau.api.rest.bindings.TableauCredentialsType;
 import tableau.api.rest.bindings.TsResponse;
-import tableau.api.rest.bindings.UserListType;
 import tableau.api.rest.bindings.UserType;
 import tableau.api.rest.bindings.ViewListType;
-import tableau.api.rest.bindings.WorkbookListType;
 import tableau.api.rest.bindings.WorkbookType;
 
 public class TableauService extends DefaultAction{

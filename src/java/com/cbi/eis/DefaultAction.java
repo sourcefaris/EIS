@@ -1,6 +1,7 @@
 package com.cbi.eis;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
 import org.apache.struts2.ServletActionContext;
@@ -10,10 +11,15 @@ import com.cbi.eis.entity.Role;
 import com.cbi.eis.entity.User;
 import com.cbi.eis.persistence.PersistenceAware;
 import com.cbi.eis.persistence.PersistenceManager;
+import com.cbi.eis.security.LoginFilter;
 import com.cbi.eis.security.SessionCredentials;
 import com.cbi.eis.security.SessionCredentialsAware;
+import com.cbi.eis.service.TableauService;
 import com.cbi.eis.util.PropertyLooker;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+
+import tableau.api.rest.bindings.WorkbookType;
 
 
 public class DefaultAction extends ActionSupport implements PersistenceAware, SessionCredentialsAware {
@@ -90,5 +96,15 @@ public class DefaultAction extends ActionSupport implements PersistenceAware, Se
 	
 	public void setQueryStatus(String queryStatus) {
 		this.queryStatus = queryStatus;
+	}
+	
+	public List<WorkbookType> getWorkbooks(){
+		if(ServletActionContext.getRequest().getSession().getAttribute(LoginFilter.TABLEAU_WORKBOOKS)!=null)
+			return (List<WorkbookType>) ServletActionContext.getRequest().getSession().getAttribute(LoginFilter.TABLEAU_WORKBOOKS);
+		else {
+			List<WorkbookType> workbooks = TableauService.getResponseQueryWorkbooks(200, 1).getWorkbooks().getWorkbook();
+			ActionContext.getContext().getSession().put(LoginFilter.TABLEAU_WORKBOOKS, workbooks);
+			return workbooks;
+		}
 	}
 }

@@ -13,11 +13,11 @@ public class TableauURLAction extends DefaultAction{
 	
 	public String execute(){
 		try {
-//			url = "http://"+get("tableau.server.host")+"/#/views/"+getCurrDescriptorUrl()+"?"+get("tableau.params");
+			url = "http://"+get("tableau.server.host")+"/#/views/"+getCurrDescriptorUrl()+"?"+get("tableau.params");
 			/*
 			 * URl to show a view with trusted ticket
 			 */
-			url = TableauService.getSourceViewURL(getRemoteAddress(), get("tableau.server.host"), getCurrentUser().getUsername(), getCurrDescriptorUrl(), get("tableau.params"));
+//			url = TableauService.getSourceViewURL(getRemoteAddress(), get("tableau.server.host"), getCurrentUser().getUsername(), getCurrDescriptorUrl(), get("tableau.params"));
 			getResponse().sendRedirect(url);
 		} catch (Exception e) {
 			e.printStackTrace();

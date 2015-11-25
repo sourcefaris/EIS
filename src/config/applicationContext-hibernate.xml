@@ -28,6 +28,7 @@
 				<value>com.cbi.eis.entity.RolePrivilage</value>
 				<value>com.cbi.eis.entity.Descriptor</value>
 				<value>com.cbi.eis.entity.ModuleFunction</value>
+				<value>com.cbi.eis.entity.RestrictWorkbook</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

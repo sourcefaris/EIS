@@ -5,17 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cbi.eis.DefaultAction;
+import com.cbi.eis.entity.RestrictWorkbook;
 import com.cbi.eis.entity.RolePrivilage;
 import com.cbi.eis.entity.User;
-import com.cbi.eis.security.LoginFilter;
-import com.opensymphony.xwork2.ActionContext;
-
-import tableau.api.rest.bindings.WorkbookType;
 
 public class SiteTree extends DefaultAction {
 	private String roleId = "";
 	private String tree_script = "";
-	List<String> contentUrls = new ArrayList<>();
 	private String iframeSrc;
 	private String urlAction;
 
@@ -26,14 +22,6 @@ public class SiteTree extends DefaultAction {
 		String variableNode = "menu";
 
 		SiteTreeLeaf dbTree;
-
-		List<WorkbookType> works = (List<WorkbookType>) ActionContext.getContext().getSession().get(LoginFilter.TABLEAU_WORKBOOKS);
-		if(works!=null){
-			for(WorkbookType work:works){
-				contentUrls.add(work.getContentUrl());
-			}
-		} else 
-			return "login";
 
 		try {
 			User us = getCurrentUser();
@@ -53,17 +41,8 @@ public class SiteTree extends DefaultAction {
 						&& !tmp.getModuleFunction().getModuleDescriptor().getId().trim().equalsIgnoreCase("")) {
 					String sUrlAction = "../module/" + tmp.getModuleFunction().getModuleDescriptor().getName() + "/"
 							+ tmp.getModuleFunction().getModuleDescriptor().getActionName();
-					if(tmp.getModuleFunction().getModuleDescriptor().isTableau()==true){
-						for(String contentUrl: contentUrls){
-							if(contentUrl.trim().equalsIgnoreCase(tmp.getModuleFunction().getModuleDescriptor().getName().trim())){
-								MTMJavaScript = MTMJavaScript + "<div class=\"pkg-body\">";
-								MTMJavaScript = MTMJavaScript + "<a target=\"main\" href=\"" + sUrlAction + ".action\">"
-										+ tmp.getModuleFunction().getName().replace("<br>", "") + "</a>";
-								MTMJavaScript = MTMJavaScript + "</div>";
-								break;
-							} 
-						}
-					} else {
+					List<RestrictWorkbook> restrictWorkbooks = persistence.getList("FROM "+RestrictWorkbook.class.getName()+" rwb WHERE rwb.userId='"+getCurrentUser().getUserTableauId()+"' AND rwb.workbookId='"+tmp.getModuleFunction().getModuleDescriptor().getWorkbookId()+"'");
+					if(restrictWorkbooks.isEmpty()){
 						MTMJavaScript = MTMJavaScript + "<div class=\"pkg-body\">";
 						MTMJavaScript = MTMJavaScript + "<a target=\"main\" href=\"" + sUrlAction + ".action\">"
 								+ tmp.getModuleFunction().getName().replace("<br>", "") + "</a>";
@@ -73,7 +52,7 @@ public class SiteTree extends DefaultAction {
 					MTMJavaScript = MTMJavaScript + "<div class=\"pkg\"><h3>" + tmp.getModuleFunction().getName().replace("<br>", "")
 							+ "</h3><div class=\"pkg-body\">";
 					// check the child is > 0
-					MTMJavaScript = MTMJavaScript + dbTree.getMTMJavaScript(contentUrls);
+					MTMJavaScript = MTMJavaScript + dbTree.getMTMJavaScript();
 					MTMJavaScript = MTMJavaScript + "</div></div>";
 
 				}

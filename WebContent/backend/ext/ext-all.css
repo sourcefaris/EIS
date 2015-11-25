@@ -915,7 +915,7 @@ q:before,q:after {
 }
 
 .x-btn {
-	font: normal 11px tahoma, verdana, helvetica;
+	font: normal 11px Calibri;
 	cursor: pointer;
 	white-space: nowrap;
 }
@@ -923,7 +923,7 @@ q:before,q:after {
 .x-btn button {
 	border: 0 none;
 	background: transparent;
-	font: normal 11px tahoma, verdana, helvetica;
+	font: normal 11px Calibri;
 	padding-left: 3px;
 	padding-right: 3px;
 	cursor: pointer;
@@ -1903,7 +1903,7 @@ q:before,q:after {
 }
 
 .x-layout-panel-hd-text {
-	font: normal 11px tahoma, verdana, helvetica;
+	font: normal 11px Calibri;
 	padding: 4px;
 	padding-left: 4px;
 	display: block;
@@ -2146,7 +2146,7 @@ body.x-body-masked .x-dlg select {
 		-82px;
 	background-color: navy;
 	color: #FFF;
-	font: bold 12px "sans serif", tahoma, verdana, helvetica;
+	font: bold 12px Calibri;
 	overflow: hidden;
 	padding: 5px;
 	white-space: nowrap;
@@ -2377,7 +2377,7 @@ body.x-body-masked .x-dlg select {
 #x-msg-box .x-dlg-bd {
 	padding: 5px;
 	overflow: hidden !important;
-	font: normal 13px verdana, tahoma, sans-serif;
+	font: normal 13px Calibri;
 }
 
 #x-msg-box .ext-mb-input {
@@ -2387,7 +2387,7 @@ body.x-body-masked .x-dlg select {
 
 #x-msg-box .ext-mb-textarea {
 	margin-top: 4px;
-	font: normal 13px verdana, tahoma, sans-serif;
+	font: normal 13px Calibri;
 }
 
 #x-msg-box .ext-mb-progress-wrap {
@@ -2866,7 +2866,7 @@ input.x-tree-node-cb {
 	background: url(../images/default/basic-dialog/hd-sprite.gif) repeat-x 0
 		-83px;
 	color: #FFF;
-	font: bold 11px "sans serif", tahoma, verdana, helvetica;
+	font: bold 11px Calibri;
 	overflow: hidden;
 }
 

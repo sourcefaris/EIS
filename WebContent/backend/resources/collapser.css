@@ -1,7 +1,9 @@
 .pkg h3 {
 	padding-left: 20px;
-	font: normal 11px verdana, helvetica, tahoma, sans-serif;
-	height: 22px;
+	font: normal 13px Calibri;
+	text-transform: uppercase;
+	font-weight: 700;
+	height: 25px;
 	cursor: pointer;
 	background: transparent no-repeat 0px 0px;
 	margin-left: 2px;
@@ -12,26 +14,28 @@
 h3.collapser-expanded {
 	font-style: italic;
 	background-image: url(minus.gif);
-	background-position: right;
+	background-position: left top;
 }
 
 h3.collapser-collapsed {
 	font-weight: bold;
 	background-image: url(plus.gif);
-	background-position: right;
+	background-position: left top;
 }
 
 .pkg-body {
 	margin-left: 12px;
-	font: normal 11px verdana, helvetica, tahoma, sans-serif;
+	font: normal 13px Calibri;
 }
 
 #classes a {
-	font: normal 11px verdana, helvetica, tahoma, sans-serif;
+	font: normal 13px Calibri;
+	text-transform: uppercase;
+	font-weight: 700;
 	display: block;
 	font-weight: bold;
 	text-decoration: none;
-	height: 22px;
+	height: 25px;
 	color: white;
 	background: transparent no-repeat 0px 0px;
 	padding-left: 9px;

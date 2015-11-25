@@ -4,10 +4,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.cbi.eis.DefaultAction;
 import com.cbi.eis.entity.ModuleFunction;
+import com.cbi.eis.entity.RestrictWorkbook;
 import com.cbi.eis.persistence.PersistenceManager;
 
-public class SiteTreeLeaf {
+public class SiteTreeLeaf extends DefaultAction{
 
 	private ModuleFunction moduleFunction = null;
 	private String sId = "";
@@ -36,7 +38,7 @@ public class SiteTreeLeaf {
 		return this.moduleFunction;
 	}
 
-	public String getMTMJavaScript(List<String> contentUrls) throws ClassNotFoundException, SQLException, Exception {
+	public String getMTMJavaScript() throws ClassNotFoundException, SQLException, Exception {
 		SiteTreeLeaf dbTreeWalkerChild;
 
 		String sParentId = "";
@@ -53,23 +55,17 @@ public class SiteTreeLeaf {
 					&& !mf.getModuleDescriptor().getId().trim().equalsIgnoreCase("")) {
 				String sUrlAction = "../module/" + mf.getModuleDescriptor().getName() + "/"
 						+ mf.getModuleDescriptor().getActionName();
-				if(mf.getModuleDescriptor().isTableau()==true){
-					for(String contentUrl: contentUrls){
-						if(contentUrl.trim().equalsIgnoreCase(mf.getModuleDescriptor().getName().trim())){
-							MTMJavaScript = MTMJavaScript + "<div class=\"pkg-body\">";
-							MTMJavaScript = MTMJavaScript + "<a target=\"main\" href=\"" + sUrlAction + ".action\">" + mf.getName().replace("<br>", "") + "</a>";
-							MTMJavaScript = MTMJavaScript + "</div>";
-						}
-					}
-				} else {
+				List<RestrictWorkbook> restrictWorkbooks = pm.getList("FROM "+RestrictWorkbook.class.getName()+" rwb WHERE rwb.userId='"+getCurrentUser().getUserTableauId()+"' AND rwb.workbookId='"+mf.getModuleDescriptor().getWorkbookId()+"'");
+				if(restrictWorkbooks.isEmpty()){
 					MTMJavaScript = MTMJavaScript + "<div class=\"pkg-body\">";
-					MTMJavaScript = MTMJavaScript + "<a target=\"main\" href=\"" + sUrlAction + ".action\">" + mf.getName().replace("<br>", "") + "</a>";
+					MTMJavaScript = MTMJavaScript + "<a target=\"main\" href=\"" + sUrlAction + ".action\">"
+							+ mf.getName().replace("<br>", "") + "</a>";
 					MTMJavaScript = MTMJavaScript + "</div>";
 				}
 			} else {
 				MTMJavaScript = MTMJavaScript + "<div class=\"pkg\"><h3>" + mf.getName().replace("<br>", "")
 						+ "</h3><div class=\"pkg-body\">";
-				MTMJavaScript = MTMJavaScript + dbTreeWalkerChild.getMTMJavaScript(contentUrls);
+				MTMJavaScript = MTMJavaScript + dbTreeWalkerChild.getMTMJavaScript();
 				MTMJavaScript = MTMJavaScript + "</div></div>";
 			}
 			i++;
