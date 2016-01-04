@@ -102,7 +102,7 @@ public class DefaultAction extends ActionSupport implements PersistenceAware, Se
 		if(ServletActionContext.getRequest().getSession().getAttribute(LoginFilter.TABLEAU_WORKBOOKS)!=null)
 			return (List<WorkbookType>) ServletActionContext.getRequest().getSession().getAttribute(LoginFilter.TABLEAU_WORKBOOKS);
 		else {
-			List<WorkbookType> workbooks = TableauService.getResponseQueryWorkbooks(200, 1).getWorkbooks().getWorkbook();
+			List<WorkbookType> workbooks = TableauService.getResponseQueryWorkbooks(1000, 1).getWorkbooks().getWorkbook();
 			ActionContext.getContext().getSession().put(LoginFilter.TABLEAU_WORKBOOKS, workbooks);
 			return workbooks;
 		}

@@ -75,6 +75,10 @@ a#sign-out {
 	background: transparent;
 }
 
+#classes:hover {
+	overflow: auto;
+}
+
 #classes a span {
 	font: normal 11px Calibri;
 }

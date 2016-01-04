@@ -1,7 +1,12 @@
 package com.cbi.eis.security.login;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.cbi.eis.DefaultAction;
 import com.cbi.eis.entity.Role;
@@ -23,6 +28,13 @@ public class LoginForm extends DefaultAction implements UserAccessorAware {
 	private String redirectUri;
 
 	public String execute() {
+    	if(getRedirectUri()!=null&&!"".equalsIgnoreCase(getRedirectUri().trim())){
+    		try {
+				getResponse().sendRedirect("../../");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+    	}
 		if (ActionContext.getContext().getSession().get(
 				LoginFilter.LOGIN_GA_USER) != null) { // sudah login
 			
@@ -101,6 +113,10 @@ public class LoginForm extends DefaultAction implements UserAccessorAware {
 
 	public void setRole(Role role) {
 		this.role = role;
+	}
+	
+    public HttpServletResponse getResponse() {
+		return (HttpServletResponse) ActionContext.getContext().get(ServletActionContext.HTTP_RESPONSE);
 	}
 	
 	

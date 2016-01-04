@@ -183,5 +183,9 @@ public class TableauService extends DefaultAction{
 	public static void deleteWorkbookPermission(String workbookId, String userId, String capabilityName, String capabilityMode){
 		getTableauRestAPIService().invokeDeletePermissionsToWorkbook(getCredentials(), workbookId, userId, capabilityName, capabilityMode);
 	}
+	
+	public static void signOut(){
+		getTableauRestAPIService().invokeSignOut(getCredentials());
+	}
 
 }

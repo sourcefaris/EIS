@@ -15,8 +15,7 @@ public class SaveUser extends UserForm {
 	@Validations(requiredStrings = {
 			@RequiredStringValidator(fieldName = "user.username", message = "Please input field username"),
 			@RequiredStringValidator(fieldName = "user.password", message = "Please input field password"),
-			@RequiredStringValidator(fieldName = "user.fullName", message = "Please input field full name"),
-			@RequiredStringValidator(fieldName = "user.email", message = "Please input field email")
+			@RequiredStringValidator(fieldName = "user.fullName", message = "Please input field full name")
 	})
 	@Override
 	public String execute() throws Exception {
@@ -25,7 +24,7 @@ public class SaveUser extends UserForm {
 			user = (User) persistence.getById(User.class, getUser().getId());
 		else {
 			user = new User();
-			if(!usernameContains(getUser().getUsername())){
+			if(!usernameIsNotContains(getUser().getUsername())){
 				addActionError("User is exist");
 				setUser(null);
 				return INPUT;
@@ -39,7 +38,7 @@ public class SaveUser extends UserForm {
 			user.setPassword(StringUtils.encodeBase64(getUser().getPassword()));
 			user.setFullName(getUser().getFullName());
 			user.setEmail(getUser().getEmail());
-			user.setRole((Role) persistence.getById(Role.class, "1"));
+			user.setRole((Role) persistence.getById(Role.class, "2"));
 			user.setSiteRoleTableau(getUser().getSiteRoleTableau());
 			user.setUserTableauId(getUser().getUserTableauId());
 			System.out.println("user Tableau : "+getUser().getUserTableauId());
@@ -64,7 +63,7 @@ public class SaveUser extends UserForm {
 		return null;
 	}
 	
-	private boolean usernameContains(String username){
+	private boolean usernameIsNotContains(String username){
 		List<User> userList = persistence.findAll(User.class);
 		for (User user: userList){
 			if(user.getUsername().equalsIgnoreCase(username)) return false ;

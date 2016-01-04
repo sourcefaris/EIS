@@ -15,9 +15,9 @@ var Docs = function(){
                 },
                 west: {
                     split:false,
-                    initialSize: 225,
-                    minSize: 225,
-                    maxSize: 225,
+                    initialSize: 232,
+                    minSize: 232,
+                    maxSize: 232,
                     titlebar: false,
                     collapsible: false,
                     animate: false,
@@ -30,7 +30,7 @@ var Docs = function(){
                     autoScroll:false,
                     tabPosition: 'top',
                     closeOnTab: true,
-                    //alwaysShowTabs: true,
+//                    alwaysShowTabs: true,
                     resizeTabs: true
                 }
             });

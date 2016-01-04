@@ -2,6 +2,11 @@
 <head>
 <title>List Menu</title>
 <link rel="stylesheet" type="text/css" href="../../style.css">
+<style>
+#mfName br{
+	display:none;
+}
+</style>
 </head>
 <body>
 <h3>Menu List</h3>
@@ -13,7 +18,7 @@
 #foreach ($module in $modules)
 	<tr valign="top">
 	<td width="10"><input type="button" onClick="javascript:window.opener.document.getElementById('moduleFunctionId').value='$!module.id';window.opener.document.getElementById('moduleFunctionName').value='$!module.name';window.close();" value="Set"></td>
-	<td>$!module.name</td>
+	<td id="mfName">$!module.name</td>
 	</tr>
 #end
 </table>

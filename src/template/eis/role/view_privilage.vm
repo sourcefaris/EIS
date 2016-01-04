@@ -3,6 +3,11 @@
 <head>
   <title>Role - Role Detail</title>
  <link type="text/css" rel="stylesheet" href="../../style.css">
+ <style>
+ #mfName br {
+ 	display:none;
+ }
+ </style>
 </head>
 <body onload="HTMLArea.replaceAll();">
 <form method="post" action="add_privilage.action">
@@ -27,7 +32,7 @@
 		#foreach ($rf in $role.rolePrivilage)
     	<tr>
     	<td width="5" valign="top"><a href="remove_privilage.action?rolePrivilageId=$!rf.id&id=$!role.id" title="Delete"><img src="../../images/mini_icons/delete.png" border="0"></a></td>
-    	<td>$!rf.moduleFunction.name</td>
+    	<td id="mfName">$!rf.moduleFunction.name</td>
     	</tr>
     	#end
     	</table>

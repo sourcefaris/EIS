@@ -111,14 +111,15 @@ $(document).ready(function(){
    </tbody>
 </table>
 <br/><br/>
-#if(!$!moduleFunction.moduleFunctions.isEmpty())
 #if($!queryStatus=="edit")
+#if(!$!moduleFunction.moduleFunctions.isEmpty())
+#if($!statusSave=="no")
 <table bgcolor="#98COF4" border="0" cellpadding="5" cellspacing="1" width="100%">
 <tr align="center" bgcolor="#d0dcff">
 	<td colspan="2"><b>Name</b></td>
 	<td colspan="2"><b>Dashboard URL</b></td>
 </tr>
-#foreach ($m in $!moduleFunction.moduleFunctions)
+#foreach ($!m in $!moduleFunction.moduleFunctions)
 	<tr valign="top" bgcolor="white">
 	<td>$!m.name</td>
 	<td align="center"><a href="form.action?queryStatus=edit&moduleFunction.id=$!m.id" title="edit"><img src="../../images/mini_icons/page_edit.png" border="0"></a></td>
@@ -132,6 +133,7 @@ $(document).ready(function(){
 	<td colspan="10">&nbsp;</td>
 </tr>
 </table>
+#end
 #end
 #end
 </form>

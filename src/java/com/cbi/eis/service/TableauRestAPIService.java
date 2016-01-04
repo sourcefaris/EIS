@@ -24,21 +24,19 @@ import com.cbi.eis.DefaultAction;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
-import tableau.api.rest.bindings.WorkbookType;
+
 import tableau.api.rest.bindings.CapabilityType;
 import tableau.api.rest.bindings.GranteeCapabilitiesType;
-import tableau.api.rest.bindings.PermissionsType;
-
 import tableau.api.rest.bindings.ObjectFactory;
+import tableau.api.rest.bindings.PermissionsType;
 import tableau.api.rest.bindings.SiteRoleType;
 import tableau.api.rest.bindings.SiteType;
 import tableau.api.rest.bindings.TableauCredentialsType;
 import tableau.api.rest.bindings.TsRequest;
 import tableau.api.rest.bindings.TsResponse;
-import tableau.api.rest.bindings.UserListType;
 import tableau.api.rest.bindings.UserType;
 import tableau.api.rest.bindings.ViewListType;
-import tableau.api.rest.bindings.WorkbookListType;
+import tableau.api.rest.bindings.WorkbookType;
 
 public class TableauRestAPIService extends DefaultAction {
 

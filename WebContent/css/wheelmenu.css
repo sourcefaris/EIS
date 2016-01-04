@@ -1,29 +1,93 @@
 /* Required Stylesheets */
 .wheel-button {
-  position: relative;
+	position: relative;
 }
 
 .wheel {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  width: 200px; /* this will determine the diameter of the circle  */
-  height: 200px; /* this will determine the diameter of the circle  */
-  visibility: hidden;
-  position: relative;
-  display: none;
+	margin: -2px;
+	padding: -2px;
+	list-style: none;
+	width: 212px; /* this will determine the diameter of the circle  */
+	height: 212px; /* this will determine the diameter of the circle  */
+	visibility: hidden;
+	position: absolute;
+	display: none;
+	z-index: 12px;
 }
 
 .wheel li {
-  overflow: hidden;
-  float:left;
+	overflow: hidden;
+	float: left;
 }
 
 .wheel li a {
-  display: block;
+	display: block;
+	font-weight: 800;
+	color: #ffffff;
 }
 
 .sub_image_label {
 	display: none;
 	position: fixed;
+	font-size: 12px;
+}
+
+#_1 {
+	top: -40px;
+	left: 50px;
+	padding-right: 80px;
+	text-align: left;
+}
+
+#_2 {
+	top: -30px;
+	left: 50px;
+	padding-right: 80px;
+	text-align: left;
+}
+
+#_3 {
+	top: -20px;
+	left: 50px;
+	padding-right: 80px;
+	text-align: left;
+}
+
+#_4 {
+	top: -5px;
+	text-align: left;
+}
+
+#_5 {
+	top: -5px;
+	text-align: left;
+}
+
+#_6 {
+	top: -5px;
+	text-align: left;
+}
+
+#_7 {
+	top: -5px;
+	text-align: left;
+}
+
+#_8 {
+	top: -5px;
+	text-align: left;
+}
+
+#_9 {
+	top: -50px;
+	left: 50px;
+	padding-right: 80px;
+	text-align: left;
+}
+
+#_10 {
+	top: -40px;
+	left: 50px;
+	padding-right: 80px;
+	text-align: left;
 }

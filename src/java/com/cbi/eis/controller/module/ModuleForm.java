@@ -9,6 +9,7 @@ import com.cbi.eis.entity.ModuleFunction;
 public class ModuleForm extends DefaultAction{
 	private ModuleFunction moduleFunction = new ModuleFunction();
 	private List<ModuleFunction> moduleFunctions = new ArrayList<>();
+	private String statusSave="no";
 	
 	@Override
 	public String execute() throws Exception {
@@ -35,6 +36,14 @@ public class ModuleForm extends DefaultAction{
 	
 	public List<ModuleFunction> getModuleFunctions() {
 		return moduleFunctions;
+	}
+	
+	public String getStatusSave() {
+		return statusSave;
+	}
+	
+	public void setStatusSave(String statusSave) {
+		this.statusSave = statusSave;
 	}
 
 }

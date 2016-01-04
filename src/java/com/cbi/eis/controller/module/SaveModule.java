@@ -12,6 +12,7 @@ public class SaveModule extends ModuleForm {
 	})
 	@Override
 	public String execute() throws Exception {
+		setStatusSave("save");
 		ModuleFunction module = null;
 		if(getModuleFunction().getId()!=null&&!"".equalsIgnoreCase(getModuleFunction().getId().trim()))
 			module = (ModuleFunction) persistence.getById(ModuleFunction.class, getModuleFunction().getId());
